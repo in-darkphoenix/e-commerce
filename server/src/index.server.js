@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin/auth");
 const categoryRoutes = require("./routes/category");
+const productRoutes = require("./routes/product");
 
 // express's instance
 const app = express();
@@ -32,6 +33,7 @@ mongoose
 app.use("/api/user", authRoutes);
 app.use("/api/user", adminRoutes);
 app.use("/api/user", categoryRoutes);
+app.use("/api/user", productRoutes);
 
 app.listen(process.env.PORT, function () {
   console.log("Server is running at port", process.env.PORT);
